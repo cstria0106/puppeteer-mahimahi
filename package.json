@@ -1,7 +1,9 @@
 {
   "name": "puppeteer-mahimahi",
   "author": "https://github.com/cstria0106",
-  "version": "1.0.0",
+  "description": "Records HTTP requests and responses in mahimahi format.",
+  "repository": "https://github.com/cstria0106/puppeteer-mahimahi",
+  "version": "1.0.1",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.7.0",
