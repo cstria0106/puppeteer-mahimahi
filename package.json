@@ -3,7 +3,7 @@
   "author": "https://github.com/cstria0106",
   "description": "Records HTTP requests and responses in mahimahi format.",
   "repository": "https://github.com/cstria0106/puppeteer-mahimahi",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.7.0",
@@ -12,11 +12,16 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": {
+        "default": "./dist/esm/index.js",
+        "types": "./dist/esm/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/cjs/index.js",
+        "types": "./dist/cjs/index.d.ts"
+      }
     }
   },
-  "types": "./dist/index.d.ts",
   "scripts": {
     "build:esm": "tsc --project tsconfig.esm.json",
     "build:cjs": "tsc --project tsconfig.cjs.json",
