@@ -15,7 +15,7 @@ importers:
         specifier: ^1.8.4
         version: 1.8.4
       puppeteer:
-        specifier: ^24.6.1
+        specifier: '*'
         version: 24.6.1(typescript@5.8.3)
     devDependencies:
       '@types/node':
