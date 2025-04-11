@@ -1,7 +1,7 @@
 import { AxiosInstance, AxiosResponse } from "axios";
 import { HTTPRequest } from "puppeteer";
 import { Readable } from "stream";
-import { decompress } from "./decompress";
+import { decompress } from "./decompress.js";
 
 export type InterceptedResponse = AxiosResponse<Buffer> & {
   rawData: Buffer;

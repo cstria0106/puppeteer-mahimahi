@@ -1,7 +1,7 @@
 import { ClientRequest } from "http";
 import { HTTPRequest } from "puppeteer";
-import { RequestResponse, RequestResponse_Scheme } from "./http-record";
-import { InterceptedResponse } from "./request";
+import { RequestResponse, RequestResponse_Scheme } from "./http-record.js";
+import { InterceptedResponse } from "./request.js";
 
 export const getScheme = (url: URL) => {
   if (url.protocol === "http:") return RequestResponse_Scheme.HTTP;
