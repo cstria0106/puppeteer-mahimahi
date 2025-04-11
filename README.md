@@ -4,19 +4,38 @@ Records HTTP requests and responses in mahimahi format.
 
 ## How to use
 
+### Install
+**NPM**
+```bash
+npm install puppeteer-mahimahi puppeteer
+```
+**PNPM**
+```bash
+pnpm add puppeteer-mahimahi puppeteer
+```
+**Yarn**
+```bash
+yarn add puppeteer-mahimahi puppeteer
+```
+
+### Usage
 ```ts
 import { startRecording } from "puppeteer-mahimahi";
 
 const page = await browser.newPage();
 
-const stopRecording = await startRecording(page, "recordings/example.com", {
-    // User agent string (required)
-    userAgent: "USER_AGENT",
-    // Callback when intercepted request fails (optional)
-    onError: (request, error) => { 
-        console.error(error);
-    },
-});
+const stopRecording = await startRecording(
+    page,
+    "recordings/example.com",
+    {
+        // User agent string (required)
+        userAgent: "USER_AGENT",
+        // Callback when intercepted request fails (optional)
+        onError: (request, error) => { 
+            console.error(error);
+        },
+    }
+);
 
 await page.goto("https://example.com");
 await page.close();
