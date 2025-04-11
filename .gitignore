@@ -1,0 +1,4 @@
+*.tsbuildinfo
+src/http-record.ts
+dist
+node_modules

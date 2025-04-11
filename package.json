@@ -1,0 +1,30 @@
+{
+  "name": "puppeteer-mahimahi",
+  "author": "https://github.com/cstria0106",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.7.0",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build:src": "tsc",
+    "build:proto": "protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=. src/http-record.proto",
+    "build": "rimraf dist && pnpm run build:proto && pnpm run build:src"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.2.5",
+    "axios": "^1.8.4",
+    "puppeteer": "^24.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "rimraf": "^6.0.1",
+    "ts-proto": "^2.7.0",
+    "typescript": "^5.8.3"
+  }
+}
