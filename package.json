@@ -3,7 +3,7 @@
   "author": "https://github.com/cstria0106",
   "description": "Records HTTP requests and responses in mahimahi format.",
   "repository": "https://github.com/cstria0106/puppeteer-mahimahi",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.7.0",
@@ -12,17 +12,15 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "scripts": {
-    "build:esm": "tsc --project tsconfig.esm.json",
-    "build:cjs": "tsc --project tsconfig.cjs.json",
-    "build:types": "tsc --project tsconfig.types.json",
+    "build:src": "tsup-node",
     "build:proto": "protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=. src/http-record.proto",
-    "build": "rimraf dist && pnpm run build:proto && pnpm run build:esm && pnpm run build:cjs && pnpm run build:types"
+    "build": "pnpm run build:proto && pnpm run build:src"
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.2.5",
@@ -31,8 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
-    "rimraf": "^6.0.1",
     "ts-proto": "^2.7.0",
-    "typescript": "^5.8.3"
+    "tsup": "^8.4.0"
   }
 }
